@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import Title from './Title/';
 import '../sass/main.scss';
 import { Box, useTheme } from '@mui/material';
 
@@ -52,23 +53,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Header() {
-  let loggedIn = localStorage.getItem('loggedIn');
+export default function Navbar() {
+  let loggedIn = localStorage.getItem('isAuthenticated');
   if (loggedIn !== null) {
     loggedIn = JSON.parse(loggedIn);
   }
 
   const theme = useTheme();
   return (
-    <div className=''>
-      <h1>Pawsitive Adoption</h1>
-      <Box sx={{ flexGrow: 1 }}>
+    <div className='navbarContainer'>
+      <Box
+        sx={{
+          flexGrow: 1,
+          marginTop: '5px',
+        }}
+      >
         <AppBar
-          sx={{ backgroundColor: theme.palette.secondary }}
+          sx={{
+            backgroundColor: theme.palette.secondary,
+            width: '80vw',
+            margin: '0 auto',
+            borderRadius: '5px',
+          }}
           color='secondary'
           position='static'
         >
-          <Toolbar>
+          <Toolbar sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
             {loggedIn ? (
               <Link to='/signout' className='link'>
                 Sign out

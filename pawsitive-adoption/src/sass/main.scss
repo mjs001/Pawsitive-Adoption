@@ -7,12 +7,48 @@ body {
 .link {
   color: white;
   padding: 5px;
+  &:hover {
+    color: #E63946
+  }
 }
 
 .signinPageContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
+  max-height: 100vh;
+}
+
+.navbarContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  background-color: #f3ec78;
+  background: -moz-radial-gradient(circle, rgba(230,57,70,1) 11%, rgba(69,123,157,1) 100%);
+  background: -webkit-radial-gradient(circle, rgba(230,57,70,1) 11%, rgba(69,123,157,1) 100%);
+  background: radial-gradient(circle, rgba(230,57,70,1) 11%, rgba(69,123,157,1) 100%);
+    // background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin: 0 auto;
+}
+
+
+.homepageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }

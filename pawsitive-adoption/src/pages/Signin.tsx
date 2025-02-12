@@ -18,6 +18,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router';
 import Container from '@mui/material/Container';
+import Title from '../components/Title';
 import '../sass/main.scss';
 
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -91,7 +92,6 @@ export default function Signin(props: { disableCustomTheme?: boolean }) {
       })
       .catch((err) => console.error(err));
     localStorage.setItem('formData', JSON.stringify(formData));
-    localStorage.setItem('loggedIn', JSON.stringify(true));
     setFormData({ name: '', email: '' });
     handleLogin();
   };
@@ -124,6 +124,7 @@ export default function Signin(props: { disableCustomTheme?: boolean }) {
   };
   return (
     <div className='signinPageContainer'>
+      <Title />
       <SignInContainer>
         <Card variant='outlined'>
           <Typography
